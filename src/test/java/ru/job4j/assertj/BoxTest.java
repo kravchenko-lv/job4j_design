@@ -1,4 +1,4 @@
-package assertj;
+package ru.job4j.assertj;
 
 import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
