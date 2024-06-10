@@ -26,7 +26,7 @@ class NameLoadTest {
     @Test
     void checkValidateIsExitSymb() {
         NameLoad nameLoad = new NameLoad();
-        String[] s = new String[]{"key4-name4","key1=name1", "key2=name2"};
+        String[] s = new String[]{"key4-name4", "key1=name1", "key2=name2"};
         assertThatThrownBy(() -> nameLoad.parse(s))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("key4-name4")
@@ -36,7 +36,7 @@ class NameLoadTest {
     @Test
     void checkValidateIsNotBeginSymb() {
         NameLoad nameLoad = new NameLoad();
-        String[] s = new String[]{"=key1name1","key2=name2"};
+        String[] s = new String[]{"=key1name1", "key2=name2"};
         assertThatThrownBy(() -> nameLoad.parse(s))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("=key1name1")
@@ -46,7 +46,7 @@ class NameLoadTest {
     @Test
     void checkValidateEndSymb() {
         NameLoad nameLoad = new NameLoad();
-        String[] s = new String[]{"key1=name1","key2=name2","key3name3="};
+        String[] s = new String[]{"key1=name1", "key2=name2", "key3name3="};
         assertThatThrownBy(() -> nameLoad.parse(s))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("key3name3=")
