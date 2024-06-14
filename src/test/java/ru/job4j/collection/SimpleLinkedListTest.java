@@ -126,15 +126,16 @@ class SimpleLinkedListTest {
 
     @Test
     void whenSetAfterGetIteratorThenMustBeOk() {
-        Iterator<Integer> iterator = list.iterator();
         list = new SimpleLinkedList<>();
         list.add(1);
         list.add(2);
         list.add(3);
+        Iterator<Integer> iterator = list.iterator();
         assertThat(iterator.next()).isEqualTo(1);
         assertThat(iterator.next()).isEqualTo(2);
         assertThat(iterator.next()).isEqualTo(3);
     }
+
     @Test
     void whenGetByIncorrectIndexThenGetException() {
         assertThatThrownBy(() -> list.get(5))
