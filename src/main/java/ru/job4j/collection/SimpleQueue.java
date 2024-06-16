@@ -13,7 +13,7 @@ public class SimpleQueue<T> {
             throw new NoSuchElementException("Queue is empty");
         }
         T value = null;
-        if ( countOut > 0 ) {
+        if (countOut > 0) {
             value = output.pop();
             countOut--;
         }
