@@ -8,14 +8,12 @@ public class SimpleQueue<T> {
     private int countIn = 0;
     private int countOut = 0;
 
-    /* добавьте переменные, если они требуются */
-    //должен возвращать первое значение и удалять его из коллекции.
     public T poll() {
         if (countIn == 0 && countOut == 0) {
             throw new NoSuchElementException("Queue is empty");
         }
         T value = null;
-        if (countOut > 0 ) {
+        if ( countOut > 0 ) {
             value = output.pop();
             countOut--;
         }
